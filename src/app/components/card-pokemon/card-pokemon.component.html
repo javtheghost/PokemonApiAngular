@@ -1,0 +1,16 @@
+<div class="container mb-5">
+  <div class="row p-2">
+    <div class="card" style="width: 19rem;" *ngFor="let pokemon of pokemones">
+      <img class="card-img-top" src="..." alt="Card image cap cursor">
+      <div class="card-body">
+        <h5 class="card-title">{{pokemon.name}}</h5>
+        <a href="#" class="btn btn-primary">Ver</a>
+      </div>
+    </div>
+  </div>primary
+  <div class="mt-5">
+    <button class="btn btn-primary float-left btn-large btn-pagina" (click)="paginarAnterior()" [disabled]="btnActive">Previus</button>
+    <button class="btn btn-primary float-right btn-large  btn-pagina" (click)="paginarSiguiente()">Next</button>
+
+  </div>
+</div>
