@@ -1,7 +1,9 @@
 <div class="container mb-5">
   <div class="row p-2">
     <div class="card" style="width: 19rem;" *ngFor="let pokemon of pokemones">
-      <img class="card-img-top" src="..." alt="Card image cap cursor">
+      <img class="card-img-top cursor" src="./assets/pokeball.png"
+      (click)="onClickPokemon(pokemon.name)"
+      >
       <div class="card-body">
         <h5 class="card-title">{{pokemon.name}}</h5>
         <a href="#" class="btn btn-primary">Ver</a>

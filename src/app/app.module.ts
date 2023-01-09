@@ -9,12 +9,16 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardPokemonComponent } from './components/card-pokemon/card-pokemon.component';
 import { CardPokemonModule } from './components/card-pokemon/card-pokemon.module';
+import { DetailPokemonComponent } from './pages/detail-pokemon/detail-pokemon.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    DetailPokemonComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pokemon } from 'src/app/interfaces/pokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
@@ -12,7 +13,7 @@ export class CardPokemonComponent implements OnInit {
   adelante = 0;
   atras = 0;
   btnActive = true;
-  constructor(private _pokemonService:PokemonService) { }
+  constructor(private _pokemonService:PokemonService, private router:Router) { }
 
   ngOnInit(): void {
     localStorage.removeItem('valor');
@@ -43,5 +44,11 @@ export class CardPokemonComponent implements OnInit {
     localStorage.removeItem('valor');
     this.btnActive = false;
 
+  }
+
+  onClickPokemon(nombre:string){
+    this._pokemonService.getPokemonDetails(nombre).subscribe(pokemon=>{
+      this.router.navigate(['/pokemon', pokemon.name])
+    });
   }
 }

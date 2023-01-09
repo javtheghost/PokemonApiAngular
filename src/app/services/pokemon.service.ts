@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Pokemon, PokemonesResponse,  } from '../interfaces/pokemon';
 import { Observable, map } from 'rxjs';
 import { environment } from '../../environments/environment.prod';
+import { PokemonDetail } from '../interfaces/pokemondetail';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,9 @@ export class PokemonService {
     }
   }
 
+  getPokemonDetails(nombre:string):Observable<PokemonDetail>{
+    return this.http.get<PokemonDetail>(`${this.api}pokemon/${nombre}`);
+  }
   getPokemons():Observable<Pokemon[]>{
     return this.http.get<PokemonesResponse>(`${this.api}${this.enPoint}`, {
       params:this.params
